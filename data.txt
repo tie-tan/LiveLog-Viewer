@@ -1,0 +1,61 @@
+a 
+b 
+c 
+d 
+e
+f 
+g 
+h 
+i 
+j 
+k 
+l
+m
+n
+o
+bool is_panlindrome(ll n)
+{
+    string k=to_string(n);
+    string h=k;
+    reverse(k.begin(),k.end());
+    return k==h;
+}
+c
+f
+ll gcd(ll a, ll b)
+{
+    if (!a)
+       return b;
+    return gcd(b%a,a);
+}g
+long long factorial(ll n)
+{
+    if(n==0)
+    {
+        return 1;
+    }
+    return factorial(n-1)*n;
+}
+a
+cf
+ggg
+ghgj
+fgf
+fgfg
+fgffg
+fgfh
+abcde
+fgd
+abcde
+fgh
+vvg
+fgh
+abce
+fghij
+klmn
+op
+klmoprstoprstoprst
+ty
+opqrst
+oops
+rts

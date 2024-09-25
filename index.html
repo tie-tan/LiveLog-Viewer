@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    
+    <h1>logs</h1>
+    <div id = "data">
+        <p>asf</p>
+    </div>
+    
+</body>
+
+<!-- phele ye script body k neeche likhnaa h fir roor aayega console m usko solve krna -->
+<script>
+    const xy = document.getElementById('data');
+    console.log(xy);
+
+    const abacd = "Your content here"; // Define abacd with some value
+    xy.innerHTML += '<p>' + abacd + '</p>';
+
+        const lines = []; // To keep track of the last 10 lines
+
+        const socket = new WebSocket(`ws://localhost:9000`);
+
+        socket.onmessage = function(event) {
+            console.log(event.data);
+            const newLine = event.data;
+            lines.push(newLine); // Add new line to the array
+
+            // Keep only the last 10 lines
+            if (lines.length > 10) {
+                lines.shift(); // Remove the oldest line
+            }
+
+            xy.innerHTML = lines.join('<br>');
+        };
+
+        socket.onopen = function() {
+            console.log('Connected to the server');
+        };
+
+        socket.onclose = function() {
+            console.log('Disconnected from the server');
+        };
+
+</script>
+</html>
